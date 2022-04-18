@@ -1,0 +1,16 @@
+NAME_TO_TICK_DICT = {
+    "Microsoft Corp.": "MSFT",
+    "Accenture PLC": "ACN",
+    "Adobe Inc.": "ADBE",
+    "Automatic Data Processing Inc.": "ADP",
+    "Fidelity National Information Services Inc.": "FIS",
+    "Fiserv Inc.": "FISV",
+    "International Business Machines Corp.": "IBM",
+    "Intuit Inc.": "INTU",
+    "Mastercard Inc.": "MA",
+    "Oracle Corp.": "ORCL",
+    "PayPal Holdings Inc.": "PYPL",
+    "salesforce.com inc.": "CRM",
+    "ServiceNow Inc.": "NOW",
+    "Visa Inc.": "V",
+}
