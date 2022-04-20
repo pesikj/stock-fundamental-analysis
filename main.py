@@ -17,9 +17,11 @@ result = pandas.DataFrame()
 result_corr = []
 for col in df.columns[1:]:
     df_part = df[["Date", col]]
-    df_part = df_part.rename(columns={col: f"ROA"})
+    df_part = df_part.rename(columns={col: "ROA"})
     df_prices = prices.read_data(col)
-    df_part = df_part.merge(df_prices[["Date", "Adj_Close"]], on=["Date"])
+    # df_part = df_part.merge(df_prices[["Date", "Adj_Close"]], on=["Date"])
+    df_part = pandas.merge_asof(df_part, df_prices, left_on="Date",
+                                right_on="DateNext", direction='forward')
     df_part[f"ROA_diff"] = df_part[f"ROA"].pct_change()
     df_part[f"price_diff"] = df_part[f"Adj_Close"].pct_change()
     df_part["tick"] = col
