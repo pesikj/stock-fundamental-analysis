@@ -3,8 +3,8 @@ import pandas
 from readers import common
 
 
-def read_data(stock_code="MSFT"):
-    file_path = os.path.join("data", stock_code, "ROA.xlsx")
+def read_data(stock_code="MSFT", filename="ROA.xlsx"):
+    file_path = os.path.join("data", stock_code, filename)
     df = pandas.read_excel(file_path, skiprows=3)
     df = df.iloc[:-1]
     df = df.rename(columns={"Unnamed: 0": "Date"})
@@ -15,8 +15,8 @@ def read_data(stock_code="MSFT"):
     return df
 
 
-def read_market_data():
-    file_path = os.path.join("data", "Market", "ROA.xlsx")
+def read_market_data(filename="ROA.xlsx"):
+    file_path = os.path.join("data", "Market", filename)
     df = pandas.read_excel(file_path, skiprows=3)
     df = df.iloc[:-1]
     df = df.rename(columns={"Unnamed: 0": "Date"})
