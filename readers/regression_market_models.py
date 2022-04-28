@@ -22,7 +22,8 @@ def read_market_data(files_to_process=()):
             df_merged = pandas.merge(df_merged, df, on=["Company", "Date"], how="left")
     df_prices_all = prices.read_all_data()
     df_merged = df_merged.sort_values(["Date"])
-    df_merged = pandas.merge_asof(df_merged, df_prices_all, left_on="Date",
+    df_merged = pandas.merge_asof(df_merged, df_prices_all[["DateNext", "Adj_Close", "Company"]], left_on="Date",
                                 right_on="DateNext", by="Company", direction='forward')
+    df_merged = df_merged.drop(labels="DateNext", axis=1)
     return df_merged
 
