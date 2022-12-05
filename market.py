@@ -4,7 +4,7 @@ import pandas
 import seaborn
 from scipy import stats
 
-from readers import long_term_trend, prices
+from readers import file_reader, prices
 
 VALUE_NAME = "ROE"
 FILE_NAME = f"ROE.xlsx"

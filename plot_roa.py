@@ -6,7 +6,7 @@ import seaborn
 
 import pandas
 
-from readers import long_term_trend, prices
+from readers import file_reader, prices
 
 VALUE_NAME = "Operating profit margin"
 FILE_NAME = f"OPM.xlsx"
