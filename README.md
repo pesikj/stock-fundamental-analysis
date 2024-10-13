@@ -26,3 +26,6 @@ Clone the repository and install the required dependencies:
 git clone https://github.com/pesikj/stock-fundamental-analysis.git
 cd stock-fundamental-analysis
 pip install -r requirements.txt
+```
+
+Run the selected script using the `python` or `python3` command.
